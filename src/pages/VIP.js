@@ -1,23 +1,26 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
+
 export function VIP (){
+
   const navigate = useNavigate();
    
-  const checkCookie = (session) => {
-    if(!session){
-      navigate("/");
-    }
-}
+    const checkCookie = (session) => {
+      if(!session){
+        navigate("/");
+      }
+  }
 
-useEffect(() => {
-  const session = Cookies.get("Session_Event");
-  
-  /* Here we call the function to check the cookie */
-  checkCookie(session);
-  });
+  useEffect(() => {
+    const session = Cookies.get("Session_Event");
+    
+    /* Here we call the function to check the cookie */
+    checkCookie(session);
+    });
+
 
    return(
     <>
